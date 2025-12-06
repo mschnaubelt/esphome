@@ -27,7 +27,8 @@ DriverChip(
     bus_mode=TYPE_QUAD,
     brightness=0xD0,
     color_order=MODE_RGB,
-    initsequence=(SLPOUT,),  # Requires early SLPOUT
+    no_slpout=True,  # SLPOUT is in the init sequence, early
+    initsequence=(SLPOUT,),
 )
 
 DriverChip(
@@ -95,11 +96,11 @@ CO5300 = DriverChip(
     brightness=0xD0,
     color_order=MODE_RGB,
     bus_mode=TYPE_QUAD,
+    no_slpout=True,
     initsequence=(
-        (SLPOUT,),
+        (SLPOUT,),  # Requires early SLPOUT
         (PAGESEL, 0x00),
         (SPIMODESEL, 0x80),
-        (PIXFMT, 0x55),
         (WRCTRLD, 0x20),
         (WCE, 0x00),
     ),
