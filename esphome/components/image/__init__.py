@@ -12,7 +12,7 @@ from PIL import Image, UnidentifiedImageError
 
 from esphome import core, external_files
 import esphome.codegen as cg
-from esphome.components.const import CONF_BYTE_ORDER, KEY_METADATA
+from esphome.components.const import CONF_BYTE_ORDER
 import esphome.config_validation as cv
 from esphome.const import (
     CONF_DEFAULTS,
@@ -29,6 +29,8 @@ from esphome.const import (
 )
 from esphome.core import CORE, HexInt
 from esphome.final_validate import full_config
+
+KEY_METADATA = "metadata"
 
 _LOGGER = logging.getLogger(__name__)
 

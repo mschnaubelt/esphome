@@ -3,7 +3,6 @@ from dataclasses import dataclass
 from esphome import automation, core
 from esphome.automation import maybe_simple_id
 import esphome.codegen as cg
-from esphome.components.const import KEY_METADATA
 import esphome.config_validation as cv
 from esphome.const import (
     CONF_AUTO_CLEAR_ENABLED,
@@ -20,6 +19,8 @@ from esphome.const import (
 )
 from esphome.core import CORE, CoroPriority, coroutine_with_priority
 from esphome.cpp_generator import MockObj
+
+KEY_METADATA = "metadata"
 
 DOMAIN = "display"
 IS_PLATFORM_COMPONENT = True
