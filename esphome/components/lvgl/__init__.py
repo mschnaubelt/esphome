@@ -433,13 +433,9 @@ async def to_code(configs):
     } & styles_used:
         lv_image_formats.add("A8")
 
-    print("LVGL images used:", lv_images_used)
     for image_id in lv_images_used:
         await cg.get_variable(image_id)
         metadata = get_image_metadata(image_id.id)
-        print(image_id.id, metadata)
-        if metadata is None:
-            continue
         image_type = IMAGE_TYPE[metadata.image_type]
         transparent = metadata.transparency != CONF_OPAQUE
         if image_type == ImageBinary:
